@@ -3,7 +3,7 @@ using std::cout;
 using std::cin;
 using std::endl;
 
-#include<sring>
+#include<string>
 using std::string;
 
 //prototipos de funcion
@@ -12,7 +12,8 @@ void imprimir_matriz(char**,int);
 void liberar_matriz(char**,int);
 void crear_tablero(char**,int );
 void jugar(char**,int );
-bool pieza(char**,int,int ,char );
+bool pieza_valida(char**,int,int ,char );
+
 int main(){
         int size=11;
         char**matriz=NULL;
@@ -195,11 +196,19 @@ void crear_tablero(char**matriz,int size){
 
 void jugar(char**matriz,int size){
         //la matriz esta lista para el juego
-        String entrada;
-        cout<<"ingrese coordena en formato especificado ejmp:[A-0] ";
+        string entrada;
+        cout<<"turno n - ingrese coordena en formato especificado ejmp:[A-0] ";
         cin>>entrada;
                 
+        //suponiendo validacion de entrada
         
+        //turno piezas negras
+        while(!pieza_valida(matriz,4,0,'n')){
+                cout<<" pieza invalida -> turno n - ingrese coordena en formato especificado ejmp:[A-0] ";
+                cin>>entrada;
+                //suponiendo validacion de entrada
+                
+        }
 
                 
 }
